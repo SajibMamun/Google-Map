@@ -5,9 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.google.android.gms.maps.CameraUpdate;
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MainActivity extends AppCompatActivity  implements OnMapReadyCallback {
 
@@ -26,6 +30,13 @@ public class MainActivity extends AppCompatActivity  implements OnMapReadyCallba
 
     @Override
     public void onMapReady(@NonNull GoogleMap googleMap) {
+
+        LatLng BD=new LatLng(23.7807777,90.3492858);
+
+        //googleMap.moveCamera(CameraUpdateFactory.newLatLng(BD));
+
+        googleMap.addMarker(new MarkerOptions().position(BD).title("Dhaka").snippet("The capital of Bangladesh"));
+     googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(BD,7));
 
     }
 }
