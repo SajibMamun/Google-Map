@@ -7,21 +7,52 @@
     tools:context=".MainActivity">
 
     <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/map"
-        tools:context=".MapsActivity"
-        android:name="com.google.android.gms.maps.SupportMapFragment" />
+        tools:context=".MapsActivity" />
 
-<ImageView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:src="@drawable/mylocation"
-    android:layout_alignParentEnd="true"
-    android:layout_alignParentBottom="true"
-    android:layout_margin="20dp"
-    android:onClick="myLocation"
-    />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="20dp"
+        android:onClick="myLocation"
+        android:src="@drawable/mylocation" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:padding="10dp"
+        >
+
+        <EditText
+            android:id="@+id/SearchETid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Search Location"
+            android:layout_toRightOf="@id/SearchImageiconid"
+            android:imeOptions="actionSearch"
+           />
+
+        <ImageView
+            android:id="@+id/SearchImageiconid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:src="@drawable/search"
+
+            />
+
+
+    </RelativeLayout>
 
 
 </RelativeLayout>
